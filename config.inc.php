@@ -2,7 +2,7 @@
 	define("DEBUG", 1);				      //开启调试模式 1 开启 0 关闭
 	define("DRIVER","pdo");				      //数据库的驱动，本系统支持pdo(默认)和mysqli两种
 	//define("DSN", "mysql:host=localhost;dbname=brophp"); //如果使用PDO可以使用，不使用则默认连接MySQL
-	define("HOST", "192.168.10.55");			      //数据库主机
+	define("HOST", "localhost");			      //数据库主机
 	define("USER", "root");                               //数据库用户名
 	define("PASS", "root");                                   //数据库密码
 	define("DBNAME","brophp");			      //数据库名
