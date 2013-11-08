@@ -10,7 +10,7 @@ class Common extends Action {
 	 * 进入后台入口后 第一个被调用的方法
 	 */
 	public function init(){
-		if (!$_SESSION['admin_login']) {
+		if (!$_SESSION['admin_login_flag']) {
 			$this->redirect('login/index');
 		}
 	}	
