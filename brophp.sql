@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.12, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.1.47, for pc-linux-gnu (i686)
 --
 -- Host: localhost    Database: brophp
 -- ------------------------------------------------------
--- Server version	5.6.12-log
+-- Server version	5.1.47
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categroy`
+-- Table structure for table `bro_categroy`
 --
 
-DROP TABLE IF EXISTS `categroy`;
+DROP TABLE IF EXISTS `bro_categroy`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categroy` (
+CREATE TABLE `bro_categroy` (
   `cid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pid` int(10) unsigned NOT NULL DEFAULT '0',
   `cname` char(50) DEFAULT NULL,
@@ -31,22 +31,22 @@ CREATE TABLE `categroy` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categroy`
+-- Dumping data for table `bro_categroy`
 --
 
-LOCK TABLES `categroy` WRITE;
-/*!40000 ALTER TABLE `categroy` DISABLE KEYS */;
-/*!40000 ALTER TABLE `categroy` ENABLE KEYS */;
+LOCK TABLES `bro_categroy` WRITE;
+/*!40000 ALTER TABLE `bro_categroy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_categroy` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `columns`
+-- Table structure for table `bro_columns`
 --
 
-DROP TABLE IF EXISTS `columns`;
+DROP TABLE IF EXISTS `bro_columns`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `columns` (
+CREATE TABLE `bro_columns` (
   `cid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pid` int(10) unsigned NOT NULL DEFAULT '0',
   `cname` char(50) DEFAULT NULL,
@@ -55,22 +55,22 @@ CREATE TABLE `columns` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `columns`
+-- Dumping data for table `bro_columns`
 --
 
-LOCK TABLES `columns` WRITE;
-/*!40000 ALTER TABLE `columns` DISABLE KEYS */;
-/*!40000 ALTER TABLE `columns` ENABLE KEYS */;
+LOCK TABLES `bro_columns` WRITE;
+/*!40000 ALTER TABLE `bro_columns` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_columns` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `links`
+-- Table structure for table `bro_links`
 --
 
-DROP TABLE IF EXISTS `links`;
+DROP TABLE IF EXISTS `bro_links`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `links` (
+CREATE TABLE `bro_links` (
   `lid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` char(100) NOT NULL,
   `url` char(100) NOT NULL,
@@ -82,22 +82,22 @@ CREATE TABLE `links` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `links`
+-- Dumping data for table `bro_links`
 --
 
-LOCK TABLES `links` WRITE;
-/*!40000 ALTER TABLE `links` DISABLE KEYS */;
-/*!40000 ALTER TABLE `links` ENABLE KEYS */;
+LOCK TABLES `bro_links` WRITE;
+/*!40000 ALTER TABLE `bro_links` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `news`
+-- Table structure for table `bro_news`
 --
 
-DROP TABLE IF EXISTS `news`;
+DROP TABLE IF EXISTS `bro_news`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news` (
+CREATE TABLE `bro_news` (
   `nid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` char(100) NOT NULL,
   `descr` text,
@@ -110,22 +110,22 @@ CREATE TABLE `news` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `news`
+-- Dumping data for table `bro_news`
 --
 
-LOCK TABLES `news` WRITE;
-/*!40000 ALTER TABLE `news` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+LOCK TABLES `bro_news` WRITE;
+/*!40000 ALTER TABLE `bro_news` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_news` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `products`
+-- Table structure for table `bro_products`
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `bro_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
+CREATE TABLE `bro_products` (
   `pid` int(10) unsigned NOT NULL DEFAULT '0',
   `title` char(100) NOT NULL,
   `descr` text,
@@ -138,22 +138,22 @@ CREATE TABLE `products` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `bro_products`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+LOCK TABLES `bro_products` WRITE;
+/*!40000 ALTER TABLE `bro_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `users`
+-- Table structure for table `bro_users`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `bro_users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
+CREATE TABLE `bro_users` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uname` char(50) NOT NULL,
   `passwd` char(32) NOT NULL,
@@ -164,12 +164,12 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `bro_users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `bro_users` WRITE;
+/*!40000 ALTER TABLE `bro_users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bro_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -181,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-08  0:34:29
+-- Dump completed on 2013-11-11 14:09:44
