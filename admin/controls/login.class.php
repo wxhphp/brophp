@@ -1,9 +1,11 @@
 <?php
 /**
- * 
- * @author stush.cn
- *
- */
+* PHPdoc...
+* @File login.class.php
+* @Encode UTF-8
+* @Author admin@stush.cn
+* @Date 2013-11-11
+*/
 class login extends Action {
 	/**
 	 * 显示登录页面
@@ -44,5 +46,7 @@ class login extends Action {
 	}
 	
 }
+
+
 
 //EDN OF login.class.php
