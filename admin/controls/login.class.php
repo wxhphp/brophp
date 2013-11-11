@@ -6,7 +6,7 @@
 * @Author admin@stush.cn
 * @Date 2013-11-11
 */
-class login extends Action {
+class Login extends Action {
 	/**
 	 * 显示登录页面
 	 * login.class.php没有继承common.class.php

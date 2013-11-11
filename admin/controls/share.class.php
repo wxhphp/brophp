@@ -4,7 +4,7 @@
  * @author stush.cn
  *
  */
-class share extends Action {
+class Share extends Action {
 	/**
 	 * 显示验证码的方法
 	 */
