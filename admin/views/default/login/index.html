@@ -119,7 +119,7 @@ window.attachEvent("onload", correctPNG);
                             <td width="13%" height="35" ><span class="login_txt">验证码：</span></td>
                             <td height="35" colspan="2" class="top_hui_text">
 							<input class=wenbenkuang name=captcha type=text value="" maxLength=4 size=10>
-							<image src="<{$app}>/share/captcha" />
+							<image src="<{$app}>/share/captcha" alt="点击刷新验证码" title="点击刷新验证码" onclick="this.src=this.src+'?'+Math.random();" style="cursor:pointer" />
                               </td>
                           </tr>
                           <tr>
