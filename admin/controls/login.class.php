@@ -11,6 +11,7 @@ class login extends Action {
 	 * 需要单独创建function index
 	 */
 	public function index() {
+		debug(0); //取消调试信息
 		$this->display();
 	}
 	
@@ -18,30 +19,30 @@ class login extends Action {
 	 * 验证用户登录信息
 	 */
 	public function dologin() {
-// 		p($_POST);
 		//接受登录表单传递的参数
-		$user = trim($_POST['username']);
+		$uname = trim($_POST['username']);
 		$passwd = md5(trim($_POST['password']));
-		$captcha = trim($_POST['captcha']);
-		
+		$captcha = strtoupper(trim($_POST['captcha']));
+
 		//判断验证码输入是否正确
-// 		if ($captcha != $_SESSION['captcha']) {
-// 			$this->error('验证码输入错误，请重新输入！',3,'login/index');	//验证码不正确
-// 		}
-		
+ 		if ($captcha != $_SESSION['code']) {
+ 			$this->error('验证码输入错误，请重新输入！',3,'login/index');	//验证码不正确
+ 		}
+ 		
 		//初始化用户模型
-		$user = D('user');
-		$user->field('uid')->where(array('uname'=>$user,'passwd'=>$passwd))->find();
-		
+		$user = D('users');
+		$result = $user->field('uid')->where(array('uname'=>$uname,'passwd'=>$passwd))->find();
+		if (!empty($result)) {
+			//设置用户session
+			$_SESSION['uname']=$uname;
+			$_SESSION['admin_login_flag']=true; //表示后台登录成功了
+			
+			//进行页面跳转
+			$this->redirect('index/index');
+		}
 		
 	}
 	
-	//测试验证码
-	public function yanzhengma() {
-		echo 'aaa<br />';
-		echo new Vcode();
-		echo 'bbb';
-	}
 }
 
 //EDN OF login.class.php
