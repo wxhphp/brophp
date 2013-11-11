@@ -35,6 +35,13 @@ class login extends Action {
 		
 		
 	}
+	
+	//测试验证码
+	public function yanzhengma() {
+		echo 'aaa<br />';
+		echo new Vcode();
+		echo 'bbb';
+	}
 }
 
 //EDN OF login.class.php
