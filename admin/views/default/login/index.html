@@ -117,7 +117,9 @@ window.attachEvent("onload", correctPNG);
                           </tr>
                           <tr>
                             <td width="13%" height="35" ><span class="login_txt">验证码：</span></td>
-                            <td height="35" colspan="2" class="top_hui_text"><input class=wenbenkuang name=captcha type=text value="" maxLength=4 size=10>
+                            <td height="35" colspan="2" class="top_hui_text">
+							<input class=wenbenkuang name=captcha type=text value="" maxLength=4 size=10>
+							<image src="<{$app}>/share/captcha" />
                               </td>
                           </tr>
                           <tr>
