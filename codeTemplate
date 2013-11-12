@@ -5,7 +5,6 @@
 * @Encode ${encoding}
 * @Author ${user}
 * @Date ${date}
-* @Time ${time}
 */
 
 ${cursor}
