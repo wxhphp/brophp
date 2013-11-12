@@ -24,8 +24,8 @@ class Login extends Action {
 		//接受登录表单传递的参数
 		$uname = trim($_POST['username']);
 		$passwd = md5(trim($_POST['password']));
-		$captcha = strtoupper(trim($_POST['captcha']));
-
+		$captcha = strtoupper(trim($_POST['code']));
+		
 		//判断验证码输入是否正确
  		if ($captcha != $_SESSION['code']) {
  			$this->error('验证码输入错误，请重新输入！',3,'login/index');	//验证码不正确
