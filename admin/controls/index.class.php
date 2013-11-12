@@ -6,7 +6,7 @@
 * @Author admin@stush.cn
 * @Date 2013-11-11
 */
-class Index {
+class Index extends Common {
 	//默认后台首页
  	public function index(){
  		$this->display();
