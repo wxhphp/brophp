@@ -35,7 +35,7 @@ class Login extends Action {
 		$user = D('users');
 		$result = $user->field('uid')->where(array('uname'=>$uname,'passwd'=>$passwd))->find();
 		if (!empty($result)) {
-			//设置用户session
+			//设置用户的session
 			$_SESSION['uname']=$uname;
 			$_SESSION['admin_login_flag']=true; //表示后台登录成功了
 			

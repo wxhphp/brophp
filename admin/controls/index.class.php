@@ -7,10 +7,10 @@
 * @Date 2013-11-11
 */
 class Index {
-// 	public function index(){
-// 		debug(0);
-// 		$this->display();
-// 	}		
+ 	public function index(){
+ 		//debug(0);
+ 		$this->display();
+ 	}		
 }
 
 

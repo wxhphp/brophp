@@ -12,3 +12,7 @@ class Share extends Action {
 		echo new vcode();	//使用brophp内置验证码类生成验证码
 	}
 }
+
+
+
+//END OF share.class.php

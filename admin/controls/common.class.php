@@ -25,9 +25,9 @@ class Common extends Action {
 	/**
 	 * 显示默认index页面
 	 */
-//	public function index() {
-//		$this->display();
-//	}
+	public function index() {
+		$this->display();
+	}
 	
 	/**
 	 * 显示添加信息表单页面
