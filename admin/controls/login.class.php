@@ -17,10 +17,8 @@ class Login extends Action {
 		$this->display();
 	}
 	
-	/**
-	 * 验证用户登录信息
-	 */
-	public function dologin() {
+	//验证用户登录信息
+	public function doLogin() {
 		//接受登录表单传递的参数
 		$uname = trim($_POST['username']);
 		$passwd = md5(trim($_POST['password']));
@@ -30,18 +28,21 @@ class Login extends Action {
  		if ($captcha != $_SESSION['code']) {
  			$this->error('验证码输入错误，请重新输入！',3,'login/index');	//验证码不正确
  		}
+ 		
 		//初始化用户模型
-		$user = D('users');
-		$result = $user->field('uid')->where(array('uname'=>$uname,'passwd'=>$passwd))->find();
-		if (!empty($result)) {
-			//设置用户的session
-			$_SESSION['uname']=$uname;
-			$_SESSION['admin_login_flag']=true; //表示后台登录成功了
-			
-			//进行页面跳转
-			$this->redirect('index/index');
-		}
-		
+		if (D('users')->isLegalUser($uname,$passwd)) {
+			$this->redirect('index/index');	//合法用户进入后台主页
+		} else {
+			$this->error('用户名或密码错误！',3,'login/index'); //非法用户从新登录
+		}		
+	}
+	
+	//用户推出登录
+	public function doLogout() {
+		setcookie(session_name(), '', time()-1, '/');
+		$_SESSION = array();
+		session_destroy();	
+		$this->success('成功退出登录！',1,'login/index');
 	}
 	
 }
