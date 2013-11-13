@@ -78,7 +78,7 @@ CREATE TABLE `bro_links` (
   `author` char(50) DEFAULT NULL,
   `expire` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`lid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +87,7 @@ CREATE TABLE `bro_links` (
 
 LOCK TABLES `bro_links` WRITE;
 /*!40000 ALTER TABLE `bro_links` DISABLE KEYS */;
+INSERT INTO `bro_links` VALUES (1,'baidu','http://www.baidu.com','china web engine','kevin',0);
 /*!40000 ALTER TABLE `bro_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +161,7 @@ CREATE TABLE `bro_users` (
   `lastip` int(10) unsigned NOT NULL DEFAULT '0',
   `lasttime` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,6 +170,7 @@ CREATE TABLE `bro_users` (
 
 LOCK TABLES `bro_users` WRITE;
 /*!40000 ALTER TABLE `bro_users` DISABLE KEYS */;
+INSERT INTO `bro_users` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3',0,0);
 /*!40000 ALTER TABLE `bro_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -181,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-11 14:09:44
+-- Dump completed on 2013-11-13 14:54:25
