@@ -9,14 +9,20 @@
 class Links extends Common {
 	//友情连接默认首页
 	public function index() {
-		echo 'this is links';
-		exit;
+		echo time();
 	}
 	
-//	//友情连接添加页面===默认继承Common类中的add()方法
-//	public function add() {
-//		$this->display();
-//	}
+	//处理友情连接添加操作
+	public function doAdd() {
+//		debug(0);	//关闭brophp框架中的调试功能
+		
+		$links = D('links');
+		$noPassedLinks = $links->getNoPassedLinks();
+		p($noPassedLinks);
+		
+		//返回ajax请求的处理结果(返回的是json格式)	
+		$this->ajaxSuccee('友情连接添加成功，请刷新管理页面查看！');
+	}
 	
 }
 
