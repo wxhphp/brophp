@@ -60,8 +60,19 @@ class Common extends Action {
 	}
 	
 	//ajax表单体检失败时要调用本方法
-	public function ajaxError() {
-	
+	public function ajaxError($message,$navTabId='',$callbackType='',$forwardUrl='',$rel='') {
+		$return = array(
+			'statusCode'=>'300',
+			'message'=>$message,
+			'navTabId'=>$navTabId,				//是否需要页面重载
+			'rel'=>$rel,						//好像还没有使用上这个参数
+			'callbackType'=>$callbackType,		//回调类型：forward和colseCurrent两种，前者需要指定下一个参数
+			'forwardUrl'=>$forwardUrl			//callbackType类型为forward时候指定跳转的url地址
+		);
+		//将PHP的数组转换成json格式，以便web前端JavaScript可以直接使用
+		$returnString = json_encode($return);
+		//输出返回的json格式数据
+		echo $returnString;	
 	}
 }
 
