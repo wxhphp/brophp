@@ -18,6 +18,30 @@ class Links {
 		return $arr;
 	}
 	
+	/**
+	 * 
+	 * 向Links表中插入友情链接记录，要求$arr数组是表的字段做键
+	 * @param array $arr
+	 * @param mixed $autoId		可选参数，当传递true的时候表示返还最后插入的自增Id
+	 * @return	-1; //表示传递的数组参数为空，失败
+	 * 			-2; //表示插入数据库失败
+	 * 			1; //表示操作成功
+	 */
+	public function insertIntoLinks(array $arr,$autoId='') {
+		//判断数组是否为空
+		if (empty($arr)) {
+			return -1; //表示传递的数组参数为空，失败
+		}
+		$newId = $this->insert($arr);
+		
+		if (false === $newId) {
+			return -2; //表示插入数据库失败
+		} else if (true == $autoId) {
+			return $newId; //表示返还最后插入的自增Id
+		} else {
+			return 1; //表示操作成功
+		}
+	}
 	
 }
 

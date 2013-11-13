@@ -14,14 +14,21 @@ class Links extends Common {
 	
 	//处理友情连接添加操作
 	public function doAdd() {
-//		debug(0);	//关闭brophp框架中的调试功能
+		//接受并处理表单数据
+		$data = array(
+			'title'=>$_POST['title'],
+			'url'=>$_POST['rul'],
+			'descr'=>$_POST['descr'],
+			'author'=>$_POST['author'],
+			'expire'=>time();
+		);
 		
-		$links = D('links');
-		$noPassedLinks = $links->getNoPassedLinks();
-		p($noPassedLinks);
-		
-		//返回ajax请求的处理结果(返回的是json格式)	
-		$this->ajaxSuccee('友情连接添加成功，请刷新管理页面查看！');
+		//将表单数据插入到数据库总
+		if ($flag = D('links')->insertIntoLinks($data)) {
+			$this->ajaxSuccee('友情连接添加成功，请刷新管理页面查看！');
+		} else {
+			$this->ajaxError('友情链接添加失败！');
+		}
 	}
 	
 }
