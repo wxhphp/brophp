@@ -8,8 +8,16 @@
 */
 class Links {
 	//获取审核通过能正常显示的连接
-	public function getConfirmedLinks() {
-	
+	public function getConfirmedLinks($offset,$limit,$like=NULL) {
+		if (is_null($like)) {
+			$like = "title like '%%'";
+		} else {
+			$like = "title like '%$like%'";
+		}
+		$data = $this->field('*')->where($like)->limit($offset,$limit)->select();
+		$total = $this->field('count(*) as total')->where($like)->find();
+		$data['total'] = $total['total'];
+		return $data;
 	}
 	
 	//获取审核没有通过或者没有审核的连接
