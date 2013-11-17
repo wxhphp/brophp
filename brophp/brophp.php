@@ -156,7 +156,9 @@
 	//设置输出Debug模式的信息
 	if(defined("DEBUG") && DEBUG==1 && $GLOBALS["debug"]==1){
 		Debug::stop();
-		echo Debug::message();
+//		echo Debug::message();
+		//为适应DWZ的AJAX，将BroPHP默认调试信息以文件的形式写入到项目跟目录下
+		file_put_contents(APP_PATH.'debug.html', Debug::message());
 	}
 
 
