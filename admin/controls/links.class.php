@@ -53,6 +53,20 @@ class Links extends Common {
 		}
 	}
 	
+	//显示修改页面
+	public function modify() {
+		$id = $_GET['lid'];
+		$data = D('links')->getLinkDataById($id);
+		$this->assign('links',$data);
+		$this->display();
+	}
+	
+	public function doModify() {
+		$data = $_POST;
+		D('links')->updateLinks($data);
+		//输出提示信息
+		$this->ajaxSuccee('友情连接修改成功，请刷新管理页面查看！','linkmodify','colseCurrent');
+	}
 }
 
 

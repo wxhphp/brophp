@@ -51,6 +51,22 @@ class Links {
 		}
 	}
 	
+	/**
+	 * 通过给定的lid返回指定的友情连接信息
+	 * @param int $lid
+	 * @return Array
+	 */
+	public function getLinkDataById($lid) {
+		$data = $this->field('*')->where(array('lid'=>$lid))->find();
+		return $data;
+	}
+	
+	//通过给定的更新数组更新友情连接
+	public function updateLinks(array $data) {
+		$this->update($data);
+		return true;
+	}
+	
 }
 
 
