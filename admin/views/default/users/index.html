@@ -1,0 +1,72 @@
+ <form id="pagerForm" method="post" action="<{$app}>/links/index">
+	<input type="hidden" name="pageNum" value="<{$currentPage}>" />
+	<input type="hidden" name="numPerPage" value="<{$numPerPage}>" />
+	<input type="hidden" name="status" value="<{$stutus}>">
+	<input type="hidden" name="orderField" value="<{$orderField}>" />
+	<input type="hidden" name="orderDirection" value="<{$orderDirection}>" />
+</form>
+
+
+<div class="pageHeader">
+	<form rel="pagerForm" action="<{$app}>/links/index" method="post" onsubmit="return navTabSearch(this);">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					连接名称：<input type="text" name="keywords" value="<{$keywords}>" /> <button type="submit">检索</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li class=""><a href="<{$app}>/users/add" target="dialog" class="add"><span>添加</span></a></li>
+			<li><a class="edit" href="<{$app}>/links/modify/lid/{sid_link}" target="navTab" rel='linkmodify'><span>修改链接</span></a></li>
+			<li><a class="delete" href="<{$app}>/links/delete/lid/{sid_link}" target="ajaxTodo" rel="linkdel" title="确定要删除吗?"><span>删除</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="80">Uid</th>
+				<th width="120">网站名称</th>
+				<th>客户姓名</th>
+				<th width="100">连接地址</th>
+				<th width="150">网站描述</th>
+				<th width="80">建档日期</th>
+			</tr>
+		</thead>
+		<tbody>
+			<{foreach $links as $link}>
+			<tr target="sid_link" rel="<{$link.lid}>">
+				<td><{$link.lid}></td>
+				<td><{$link.title}></td>
+				<td><{$link.author}></td>
+				<td><{$link.url}></td>
+				<td><{$link.descr}></td>
+				<td><{$link.expire}></td>
+			</tr>
+			<{/foreach}>
+			
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+			</select>
+			<span>条，共<{$totalCount}>条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="<{$totalCount}>" numPerPage="<{$numPerPage}>" pageNumShown="10" currentPage="<{$currentPage}>"></div>
+
+	</div>
+</div>

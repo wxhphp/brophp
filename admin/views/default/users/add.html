@@ -1,0 +1,69 @@
+<div class="pageContent">
+    <form method="post" action="<{$app}>/users/doAdd" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);">
+        <div class="pageFormContent" layoutH="60">
+            <fieldset>
+                <legend>
+                    添加用户
+                </legend>
+                <dl>
+                    <dt>
+                        用户名称：
+                    </dt>
+                    <dd>
+                        <input class="required" name="username" type="text" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        用户密码：
+                    </dt>
+                    <dd>
+                        <input class="required" name="passwd" type="password" />
+                    </dd>
+                </dl>
+				<dl>
+                    <dt>
+                        确认密码：
+                    </dt>
+                    <dd>
+                        <input class="required" name="repasswd" type="password" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                       用户状态：
+                    </dt>
+                    <dd>
+						<input type="radio" name="status" value="1" checked="true" />启用		                
+		                <input type="radio" name="status" value="0" />禁用
+                    </dd>
+                </dl>
+            </fieldset>
+            
+            
+            
+        </div>
+        <div class="formBar">
+            <ul>                
+                <li>
+                    <div class="buttonActive">
+                        <div class="buttonContent">
+                            <button type="submit">
+                                保存
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="button">
+                        <div class="buttonContent">
+                            <button type="button" class="close">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
