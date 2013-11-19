@@ -61,11 +61,19 @@ class Links extends Common {
 		$this->display();
 	}
 	
+	//处理修改表单
 	public function doModify() {
 		$data = $_POST;
 		D('links')->updateLinks($data);
 		//输出提示信息
 		$this->ajaxSuccee('友情连接修改成功，请刷新管理页面查看！','linkmodify','colseCurrent');
+	}
+	
+	//处理删除请求
+	public function delete() {
+		$lid = $_GET['lid'];
+		D('links')->deleteById($lid);
+		$this->ajaxSuccee('友情链接删除成功！');
 	}
 }
 

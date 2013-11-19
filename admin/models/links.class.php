@@ -67,6 +67,12 @@ class Links {
 		return true;
 	}
 	
+	//通过传递的id删除链接
+	public function deleteById($lid) {
+		$this->delete($lid);
+		return true;
+	}
+	
 }
 
 
